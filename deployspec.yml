@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /moodle
+    destination: /var/www/html
+
+hooks:
+  BeforeInstall:
+    - location: scripts/preScript.sh
+      timeout: 180
+      runas: root
+
+  AfterInstall:
+    - location: scripts/postScript.sh
+      timeout: 180
+      runas: root
