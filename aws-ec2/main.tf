@@ -1,3 +1,10 @@
+variable "REGION" {
+  description = "value of region"
+  type = string
+  default = "ap-southeast-1"
+}
+
+
 terraform {
     required_providers {
         aws = {
@@ -9,7 +16,7 @@ terraform {
 
 #configure the aws
 provider "aws" {
-    region = "ap-southeast-1"
+    region = var.REGION
   
 }
 
