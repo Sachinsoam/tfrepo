@@ -14,5 +14,11 @@ provider "aws" {
 
 resource "aws_s3_bucket" "demo-s3-bucket" {
     bucket = "ssoam-demo12345"  
-     
+
+}
+
+resource "aws_s3_object" "bucket-data" {
+    bucket = "ssoam-demo12345" 
+    key = "myfile.txt"
+    source = "myfile.txt" 
 }
